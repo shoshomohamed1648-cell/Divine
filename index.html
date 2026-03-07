@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Divine Siwa — Luxury Eco Hotel</title>
+  <meta name="description" content="Divine Siwa is a spiritual, luxury eco hotel engraved into Siwa's ancient mountains. 13 rooms and 1 Royal Suite along the river, 10 minutes from Siwa center.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://divine-siwa.netlify.app/">
+  <meta property="og:title" content="Divine Siwa — The Hidden Sanctuary">
+  <meta property="og:description" content="A stillness carved into the mountain. 13 rooms, 1 Royal Suite. A divine retreat in the heart of the ancient oasis.">
+  <meta property="og:image" content="./assets/hero.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://divine-siwa.netlify.app/">
+  <meta property="twitter:title" content="Divine Siwa — The Hidden Sanctuary">
+  <meta property="twitter:description" content="A stillness carved into the mountain. 13 rooms, 1 Royal Suite. A divine retreat in the heart of the ancient oasis.">
+  <meta property="twitter:image" content="./assets/hero.png">
+
+  <!-- Favicon & Theme -->
+  <link rel="icon" type="image/png" href="./assets/hero.png">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="loading">
+  <div class="loader">
+    <div class="loader-text">Divine Siwa</div>
+  </div>
+
+  <div class="noise-overlay"></div>
+  
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero" data-target="hero" aria-label="Divine Siwa - Home">Divine Siwa</a>
+      
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#story" class="nav-link" data-target="story">Story</a>
+        <a href="#rooms" class="nav-link" data-target="rooms">Sanctuaries</a>
+        <a href="#atmosphere" class="nav-link" data-target="atmosphere">Atmosphere</a>
+        <a href="#activities" class="nav-link" data-target="activities">Experiences</a>
+        <a href="#booking" class="nav-link btn-cta" data-target="booking">Request Access</a>
+        <button class="close-menu" aria-label="Close menu">×</button>
+      </nav>
+
+      <div class="mobile-menu-btn" aria-label="Open menu" role="button" tabindex="0">
+        <span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="app-section active">
+      <div class="hero-bg" style="background-image:url('./assets/hero.png')"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-label fade-in-up">The Hidden Sanctuary</div>
+        <h1 class="hero-title fade-in-up delay-1">Engraved in<br>Silence</h1>
+        <p class="hero-text fade-in-up delay-2">Thirteen rooms. One Royal Suite. <br>A divine retreat in the heart of the ancient oasis.</p>
+        
+        <div class="hero-footer fade-in-up delay-3">
+          <div class="scarcity-box">
+            <span class="scarcity-label">Next Release</span>
+            <span class="scarcity-value" id="release-countdown">-- Days</span>
+          </div>
+          <a href="#" class="btn-circle" data-target="booking">
+            <span>Request<br>Stay</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="app-section">
+      <div class="split-layout">
+        <div class="split-image-wrapper">
+          <div class="split-image" style="background-image:url('./assets/story-building.png')"></div>
+          <div class="side-fade-overlay"></div>
+          <div class="image-overlay-text">The Origin</div>
+        </div>
+        <div class="split-content">
+          <div class="content-inner">
+            <div class="section-label fade-in-up">01 / The Story</div>
+            <h2 class="section-title fade-in-up delay-1">A Temple of<br><span class="highlight-text">Earth & Sky</span></h2>
+            <div class="separator fade-in-up delay-2"></div>
+            <p class="body-text fade-in-up delay-2">Divine Siwa is not a hotel. It is a stillness carved into the mountain, a pause in the endless desert wind. Built from the very earth it stands on—using traditional Siwan <em>kershif</em> salt-mud architecture—our walls breathe with the oasis.</p>
+            <p class="body-text fade-in-up delay-3">We exist in solitude. Ten minutes from the center, yet a world away. Here, luxury is defined by what is absent: no noise, no crowds, no distractions. Just you, the salt lakes, and the stars.</p>
+            <div class="signature fade-in-up delay-3">
+              <span>Divine Siwa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Section (Formerly Gallery) -->
+    <section id="rooms" class="app-section">
+      <div class="container h-100 flex-center">
+        <div class="gallery-wrapper">
+          <div class="section-header center">
+            <div class="section-label fade-in-up">02 / The Sanctuaries</div>
+            <h2 class="section-title fade-in-up delay-1">Private Retreats</h2>
+          </div>
+          
+          <div class="gallery-track fade-in-up delay-2">
+            <!-- Room 1: Mountain Room -->
+            <div class="gallery-card room-card" onclick="document.querySelector('[data-target=\'booking\']').click()">
+              <img src="./assets/room-image.png" alt="Mountain Room">
+              <div class="room-info">
+                <div class="room-category">The Mountain Room</div>
+                <div class="room-title">Carved in Rock</div>
+                <div class="room-features">King Bed • Panoramic View • Fireplace</div>
+              </div>
+            </div>
+
+            <!-- Room 2: Desert Room -->
+            <div class="gallery-card room-card" onclick="document.querySelector('[data-target=\'booking\']').click()">
+              <img src="./assets/gallery-sand.png" alt="Desert Room">
+              <div class="room-info">
+                <div class="room-category">The Desert Room</div>
+                <div class="room-title">Silence of Sand</div>
+                <div class="room-features">Private Terrace • Outdoor Bath • Stargazing</div>
+              </div>
+            </div>
+
+            <!-- Room 3: Royal Suite -->
+            <div class="gallery-card room-card" onclick="document.querySelector('[data-target=\'booking\']').click()">
+              <img src="./assets/gallery-palm.png" alt="Royal Suite">
+              <div class="room-info">
+                <div class="room-category">The Royal Suite</div>
+                <div class="room-title">The Oasis Crown</div>
+                <div class="room-features">2 Bedrooms • Private Pool • Butler Service</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="scroll-indicator fade-in-up delay-3">
+            <span class="arrow-left">←</span>
+            <span class="scroll-text">Swipe to Explore</span>
+            <span class="arrow-right">→</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atmosphere (Gallery) Section -->
+    <section id="atmosphere" class="app-section">
+      <div class="container h-100 flex-center">
+        <div class="atmosphere-wrapper">
+          <div class="section-header center">
+            <div class="section-label fade-in-up">03 / The Atmosphere</div>
+            <h2 class="section-title fade-in-up delay-1">Visual Diary</h2>
+          </div>
+          
+          <div class="mood-grid fade-in-up delay-2">
+            <div class="mood-item tall">
+              <img src="./assets/story-building.png" alt="Architecture">
+              <div class="mood-overlay">
+                <span>Architecture</span>
+              </div>
+            </div>
+            <div class="mood-col">
+              <div class="mood-item wide">
+                <img src="./assets/bathroom-image.png" alt="Night Swim">
+                <div class="mood-overlay">
+                  <span>Serenity</span>
+                </div>
+              </div>
+              <div class="mood-item wide">
+                <img src="./assets/gallery-sand.png" alt="Dunes">
+                <div class="mood-overlay">
+                  <span>Infinity</span>
+                </div>
+              </div>
+            </div>
+            <div class="mood-item tall">
+              <img src="./assets/hero.png" alt="Oasis View">
+              <div class="mood-overlay">
+                <span>Sanctuary</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="app-section">
+      <div class="activities-slider">
+        <div class="section-label center absolute-top fade-in-up">04 / Experiences</div>
+        <div class="activity-slide active" style="background-image:url('./assets/sand-dunes.png')">
+          <div class="slide-content">
+            <span class="slide-num">I</span>
+            <h3>The Great Sand Sea</h3>
+            <p>Sunset dunes & Bedouin rituals in the vast silence.</p>
+          </div>
+        </div>
+        <div class="activity-slide" style="background-image:url('./assets/gallery-palm.png')">
+          <div class="slide-content">
+            <span class="slide-num">II</span>
+            <h3>Salt Immersion</h3>
+            <p>Floating weightless in turquoise waters.</p>
+          </div>
+        </div>
+        <div class="activity-slide" style="background-image:url('./assets/activity-pool.png')">
+          <div class="slide-content">
+            <span class="slide-num">III</span>
+            <h3>Celestial Watch</h3>
+            <p>Stargazing from the fire circle under pristine skies.</p>
+          </div>
+        </div>
+        <div class="activity-slide" style="background-image:url('./assets/ancient.png')">
+          <div class="slide-content">
+            <span class="slide-num">IV</span>
+            <h3>Ancient Echoes</h3>
+            <p>Private tour of the Oracle and Shali Fortress.</p>
+          </div>
+        </div>
+        
+        <div class="slider-nav">
+          <button class="prev-slide">←</button>
+          <div class="slide-indicators">
+            <span class="active"></span><span></span><span></span><span></span>
+          </div>
+          <button class="next-slide">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="app-section">
+      <div class="container h-100 flex-center">
+        <div class="booking-wrapper">
+          <div class="booking-intro text-center">
+            <div class="section-label">05 / The Invitation</div>
+            <h2 class="section-title">Request Access</h2>
+            <p class="body-text small">Our doors open rarely. We host a limited number of souls. Submit your request to be considered.</p>
+          </div>
+
+          <form id="booking-form" class="exclusive-form minimal" data-netlify="true" name="booking">
+            <input type="hidden" name="form-name" value="booking" />
+            <div class="form-grid">
+              <div class="form-group">
+                <input name="name" type="text" placeholder="Your Name" required>
+                <label>Identity</label>
+              </div>
+              <div class="form-group">
+                <input name="email" type="email" placeholder="Email Address" required>
+                <label>Correspondence</label>
+              </div>
+              <div class="form-group">
+                <select name="guests">
+                  <option value="" disabled selected>Select Guests</option>
+                  <option value="1">1 Soul</option>
+                  <option value="2">2 Souls</option>
+                  <option value="3">Small Group (3-4)</option>
+                </select>
+                <label>Guests</label>
+              </div>
+              <div class="form-group">
+                <select name="room">
+                  <option value="" disabled selected>Preferred Sanctuary</option>
+                  <option value="mountain">Mountain Room</option>
+                  <option value="desert">Desert Room</option>
+                  <option value="royal">The Royal Suite</option>
+                </select>
+                <label>Sanctuary</label>
+              </div>
+              <div class="form-group full">
+                <div class="date-row">
+                  <input name="checkin" type="text" onfocus="(this.type='date')" placeholder="Arrival" required>
+                  <span class="date-separator">to</span>
+                  <input name="checkout" type="text" onfocus="(this.type='date')" placeholder="Departure" required>
+                </div>
+                <label>Timeline</label>
+              </div>
+            </div>
+            
+            <div class="form-actions center">
+              <button type="submit" class="btn-submit-outline">
+                <span class="btn-text">Submit Request</span>
+                <span class="btn-line"></span>
+              </button>
+            </div>
+            <div id="form-status" class="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+[debug] [2026-03-07T16:06:49.431Z] ----------------------------------------------------------------------
+[debug] [2026-03-07T16:06:49.433Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\marco\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2026-03-07T16:06:49.433Z] CLI Version:   15.9.0
+[debug] [2026-03-07T16:06:49.433Z] Platform:      win32
+[debug] [2026-03-07T16:06:49.433Z] Node Version:  v22.14.0
+[debug] [2026-03-07T16:06:49.433Z] Time:          Sat Mar 07 2026 18:06:49 GMT+0200 (Eastern European Standard Time)
+[debug] [2026-03-07T16:06:49.434Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-03-07T16:06:50.676Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-03-07T16:06:50.677Z] > authorizing via signed-in user (donmryq@gmail.com)
+[debug] [2026-03-07T16:06:50.677Z] [iam] checking project divinesiwa-c3234 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-03-07T16:06:50.678Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:50.678Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:50.678Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/divinesiwa-c3234:testIamPermissions [none]
+[debug] [2026-03-07T16:06:50.678Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/divinesiwa-c3234:testIamPermissions  x-goog-user-project=divinesiwa-c3234
+[debug] [2026-03-07T16:06:50.678Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/divinesiwa-c3234:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-03-07T16:06:51.703Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/divinesiwa-c3234:testIamPermissions 200
+[debug] [2026-03-07T16:06:51.703Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/divinesiwa-c3234:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-03-07T16:06:51.704Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:51.704Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:51.704Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/divinesiwa-c3234 [none]
+[debug] [2026-03-07T16:06:52.201Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/divinesiwa-c3234 200
+[debug] [2026-03-07T16:06:52.202Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/divinesiwa-c3234 {"projectId":"divinesiwa-c3234","projectNumber":"856060334276","displayName":"DivineSiwa","name":"projects/divinesiwa-c3234","resources":{"hostingSite":"divinesiwa-c3234"},"state":"ACTIVE","etag":"1_2e5dcce3-f8e2-4738-8058-2af577023bab"}
+[info] 
+[info] === Deploying to 'divinesiwa-c3234'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-03-07T16:06:52.205Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:52.205Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:52.205Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/divinesiwa-c3234/versions [none]
+[debug] [2026-03-07T16:06:52.205Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/divinesiwa-c3234/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-03-07T16:06:54.126Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/divinesiwa-c3234/versions 200
+[debug] [2026-03-07T16:06:54.126Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/divinesiwa-c3234/versions {"name":"projects/856060334276/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[divinesiwa-c3234]: beginning deploy... 
+[info] i  hosting[divinesiwa-c3234]: found 13 files in . 
+[debug] [2026-03-07T16:06:54.137Z] [hosting] uploading with 200 concurrency
+[debug] [2026-03-07T16:06:54.140Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:54.140Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:54.141Z] [hosting] hash cache [] stored for 13 files
+[debug] [2026-03-07T16:06:54.141Z] [hosting][hash queue][FINAL] {"max":1,"min":1,"avg":1,"active":0,"complete":13,"success":13,"errored":0,"retried":0,"total":13,"elapsed":2}
+[debug] [2026-03-07T16:06:54.141Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/856060334276/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6:populateFiles [none]
+[debug] [2026-03-07T16:06:54.141Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/856060334276/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6:populateFiles {"files":{"/styles.css":"781ec078d52e44550f5158231208cb9c3698c55b8ebc6e2a52e5f6a2bd2849e9","/script.js":"3062da6a606ec94b0ef08cb7e19efd4c62975fbf9ec41ea6b5407bb5aaf8ceb2","/index.html":"900cab94901afc3630185b992e31f146d1b5741e84262d4c1553eac43d6c831d","/assets/story-building.png":"479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f","/assets/sand-dunes.png":"7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9","/assets/room-image.png":"818a763e4fc681b0042a0891972b05406a4efb524d50761b81111907771e7ecc","/assets/hero.png":"53aade955505e09c1d328673ad77bc39854d578c1afaf654ba814ad8c2a3883e","/assets/gallery-sand.png":"9841eb2ae7a6b9c1c535d2871be4c3df7427712e6c3ccd9a27edeffda7381918","/assets/gallery-palm.png":"13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026","/assets/gallery-horizon.png":"edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c","/assets/bathroom-image.png":"a8a0f7ed0dc317ad3800d512d9c43d96bc4414891384bdc500e3e7b1f5900708","/assets/ancient.png":"8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11","/assets/activity-pool.png":"5ae795c42f1abd0a6712593804669e38d9e90cbc0bef339d427031240726c345"}}
+[debug] [2026-03-07T16:06:55.144Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/856060334276/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6:populateFiles 200
+[debug] [2026-03-07T16:06:55.144Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/856060334276/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6:populateFiles {"uploadRequiredHashes":["7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9","edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c","479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f","8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11","13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files"}
+[debug] [2026-03-07T16:06:55.145Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:55.145Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:55.145Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:55.145Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:55.145Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:55.145Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:55.146Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:55.146Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:55.146Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:55.146Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:06:55.146Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9 [none]
+[debug] [2026-03-07T16:06:55.146Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9 [stream]
+[debug] [2026-03-07T16:06:55.147Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c [none]
+[debug] [2026-03-07T16:06:55.147Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c [stream]
+[debug] [2026-03-07T16:06:55.148Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f [none]
+[debug] [2026-03-07T16:06:55.148Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f [stream]
+[debug] [2026-03-07T16:06:55.149Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11 [none]
+[debug] [2026-03-07T16:06:55.149Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11 [stream]
+[debug] [2026-03-07T16:06:55.149Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026 [none]
+[debug] [2026-03-07T16:06:55.149Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026 [stream]
+[debug] [2026-03-07T16:06:55.150Z] [hosting][populate queue][FINAL] {"max":1006,"min":1006,"avg":1006,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1010}
+[debug] [2026-03-07T16:06:55.151Z] [hosting] uploads queued: 5
+[debug] [2026-03-07T16:07:54.091Z] [uploadQueue] Retrying task 8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11
+[debug] [2026-03-07T16:07:54.092Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:07:54.092Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:07:54.092Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11 [none]
+[debug] [2026-03-07T16:07:54.092Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11 [stream]
+[debug] [2026-03-07T16:07:55.789Z] [uploadQueue] Retrying task 7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9
+[debug] [2026-03-07T16:07:55.790Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:07:55.790Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:07:55.790Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9 [none]
+[debug] [2026-03-07T16:07:55.790Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9 [stream]
+[debug] [2026-03-07T16:07:57.929Z] [uploadQueue] Retrying task edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c
+[debug] [2026-03-07T16:07:57.930Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:07:57.930Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:07:57.930Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c [none]
+[debug] [2026-03-07T16:07:57.930Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c [stream]
+[debug] [2026-03-07T16:08:02.368Z] [uploadQueue] Retrying task 13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026
+[debug] [2026-03-07T16:08:02.369Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:08:02.370Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:08:02.370Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026 [none]
+[debug] [2026-03-07T16:08:02.370Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026 [stream]
+[debug] [2026-03-07T16:08:04.749Z] [uploadQueue] Retrying task 479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f
+[debug] [2026-03-07T16:08:04.749Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:08:04.749Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:08:04.749Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f [none]
+[debug] [2026-03-07T16:08:04.750Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f [stream]
+[debug] [2026-03-07T16:08:53.435Z] [uploadQueue] Retrying task 8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11
+[debug] [2026-03-07T16:08:53.436Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:08:53.436Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:08:53.436Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11 [none]
+[debug] [2026-03-07T16:08:53.436Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11 [stream]
+[debug] [2026-03-07T16:08:56.833Z] [uploadQueue] Retrying task 7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9
+[debug] [2026-03-07T16:08:56.834Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:08:56.834Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:08:56.834Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9 [none]
+[debug] [2026-03-07T16:08:56.834Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9 [stream]
+[debug] [2026-03-07T16:09:01.112Z] [uploadQueue] Retrying task edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c
+[debug] [2026-03-07T16:09:01.112Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:09:01.112Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:09:01.112Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c [none]
+[debug] [2026-03-07T16:09:01.112Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c [stream]
+[debug] [2026-03-07T16:09:09.992Z] [uploadQueue] Retrying task 13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026
+[debug] [2026-03-07T16:09:09.993Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:09:09.993Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:09:09.993Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026 [none]
+[debug] [2026-03-07T16:09:09.993Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026 [stream]
+[debug] [2026-03-07T16:09:14.754Z] [uploadQueue] Retrying task 479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f
+[debug] [2026-03-07T16:09:14.756Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:09:14.756Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:09:14.756Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f [none]
+[debug] [2026-03-07T16:09:14.756Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f [stream]
+[debug] [2026-03-07T16:09:53.581Z] [uploadQueue] Retrying task 8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11
+[debug] [2026-03-07T16:09:53.582Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:09:53.582Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:09:53.582Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11 [none]
+[debug] [2026-03-07T16:09:53.582Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11 [stream]
+[debug] [2026-03-07T16:09:58.677Z] [uploadQueue] Retrying task 7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9
+[debug] [2026-03-07T16:09:58.677Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:09:58.677Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:09:58.677Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9 [none]
+[debug] [2026-03-07T16:09:58.677Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9 [stream]
+[debug] [2026-03-07T16:10:05.093Z] [uploadQueue] Retrying task edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c
+[debug] [2026-03-07T16:10:05.094Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:10:05.094Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:10:05.094Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c [none]
+[debug] [2026-03-07T16:10:05.094Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/edd37e727de1f11014d9787b6b3a8f12c4d2e3d245da00437d5a6ec7ba6a941c [stream]
+[debug] [2026-03-07T16:10:18.415Z] [uploadQueue] Retrying task 13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026
+[debug] [2026-03-07T16:10:18.416Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:10:18.416Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:10:18.416Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026 [none]
+[debug] [2026-03-07T16:10:18.416Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/13ffa28a92dff9ebd7fc458c0b25233a39bc6f3d4dca34d16a4b0fc0c26ef026 [stream]
+[debug] [2026-03-07T16:10:25.557Z] [uploadQueue] Retrying task 479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f
+[debug] [2026-03-07T16:10:25.557Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:10:25.557Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:10:25.557Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f [none]
+[debug] [2026-03-07T16:10:25.557Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/479c7cac87b2a657f991af07bd743bdb6b58f53f33030d6baa6a0e47e8352d0f [stream]
+[debug] [2026-03-07T16:10:55.324Z] [uploadQueue] Retrying task 8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11
+[debug] [2026-03-07T16:10:55.325Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:10:55.325Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:10:55.325Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11 [none]
+[debug] [2026-03-07T16:10:55.325Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/8345febf73f6f2870cb272730105eb029f5f7f8099d5b45b86ffbf09a2f7ff11 [stream]
+[debug] [2026-03-07T16:11:02.120Z] [uploadQueue] Retrying task 7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9
+[debug] [2026-03-07T16:11:02.120Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:11:02.121Z] Checked if tokens are valid: true, expires at: 1772902966776
+[debug] [2026-03-07T16:11:02.121Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9 [none]
+[debug] [2026-03-07T16:11:02.121Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/divinesiwa-c3234/versions/06dd1ba46a8ce7e6/files/7fee43bae057803b061855133b769cb9b423ee7969b83db0ea519b47cd4bc8f9 [stream]
